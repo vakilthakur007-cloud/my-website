@@ -9,9 +9,9 @@ const products = [
         title: "Vintage Rose Border",
         category: "floral",
         price: 8.99,
-        image: "assets/vintage_rose_border_1766976389297.png",
+        image: "vintage_rose_border_1766976389297.png",
         images: [
-            "assets/vintage_rose_border_1766976389297.png",
+            "vintage_rose_border_1766976389297.png",
             "https://placehold.co/600x600/f0f4f4/008080?text=Rose+Detail+1",
             "https://placehold.co/600x600/f0f4f4/008080?text=Rose+Detail+2"
         ],
@@ -22,9 +22,9 @@ const products = [
         title: "Velvet Heart Applique",
         category: "applique",
         price: 5.50,
-        image: "assets/velvet_heart_applique_1766976408118.png",
+        image: "velvet_heart_applique_1766976408118.png",
         images: [
-            "assets/velvet_heart_applique_1766976408118.png",
+            "velvet_heart_applique_1766976408118.png",
             "https://placehold.co/600x600/f0f4f4/D4AF37?text=Heart+Detail+1",
             "https://placehold.co/600x600/f0f4f4/D4AF37?text=Heart+Detail+2"
         ],
@@ -35,9 +35,9 @@ const products = [
         title: "Baby Elephant",
         category: "kids",
         price: 6.00,
-        image: "assets/baby_elephant_embroidery_1766976427598.png",
+        image: "baby_elephant_embroidery_1766976427598.png",
         images: [
-            "assets/baby_elephant_embroidery_1766976427598.png",
+            "baby_elephant_embroidery_1766976427598.png",
             "https://placehold.co/600x600/f0f4f4/008080?text=Elephant+Detail+1"
         ],
         formats: ["PES", "DST", "VIP"]
@@ -47,9 +47,9 @@ const products = [
         title: "Golden Leaf Frame",
         category: "floral",
         price: 7.25,
-        image: "assets/golden_leaf_frame_1766976442976.png",
+        image: "golden_leaf_frame_1766976442976.png",
         images: [
-            "assets/golden_leaf_frame_1766976442976.png",
+            "golden_leaf_frame_1766976442976.png",
             "https://placehold.co/600x600/f0f4f4/D4AF37?text=Leaf+Detail+1"
         ],
         formats: ["PES", "DST"]
@@ -157,7 +157,7 @@ function renderProducts(items) {
     productGrid.innerHTML = items.map(product => `
         <div class="product-card">
             <div class="card-img">
-                <img src="${product.image}" alt="${product.title}" loading="lazy">
+                <img src="${product.image.split('/').pop()}" alt="${product.title}" loading="lazy">
                 <span class="badge-new">New</span>
             </div>
             <div class="card-body">
