@@ -1,68 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome - My Website</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .container {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            padding: 40px;
-            max-width: 600px;
-            text-align: center;
-        }
-        h1 {
-            color: #333;
-            margin-bottom: 20px;
-            font-size: 2.5em;
-        }
-        p {
-            color: #666;
-            line-height: 1.6;
-            font-size: 1.1em;
-            margin-bottom: 30px;
-        }
-        .button {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s ease;
-        }
-        .button:hover {
-            background: #764ba2;
-        }
-    </style>
+    <title>Emplaza Creation | Premium Embroidery & Applique Designs</title>
+    <meta name="description"
+        content="Discover premium embroidery designs, floral appliques, and unique border patterns for your creative projects. Instant digital downloads.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-    <div class="container">
-        <h1>🚀 Welcome!</h1>
-        <p>Your website is now live on Netlify! This is a simple example page deployed using GitHub and continuous deployment.</p>
-        <p><strong>Next steps:</strong></p>
-        <ul style="text-align: left; margin: 20px 0;">
-            <li>Customize this page with your own content</li>
-            <li>Push changes to GitHub</li>
-            <li>Netlify will automatically deploy your updates</li>
-        </ul>
-        <a href="#" class="button">Learn More</a>
-    </div>
+    <header class="site-header">
+        <div class="top-strip">
+            <div class="container">
+                <p>✨ Premium Designs for Creative Souls | Instant Downloads</p>
+                <div class="header-socials">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav container">
+            <a href="index.html" class="logo">Emplaza<span class="gold-accent">.</span></a>
+            <ul class="nav-links">
+                <li><a href="#hero" class="active">Home</a></li>
+                <li><a href="#shop">Shop Designs</a></li>
+                <li><a href="#highlights">Collections</a></li>
+                <li><a href="#about">Our Story</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#" class="search-btn"><i class="fas fa-search"></i></a>
+                <a href="#" class="cart-btn"><i class="fas fa-shopping-bag"></i><span class="badge">0</span></a>
+                <button class="mobile-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content container">
+                <h1>Elevate Your Craft with <span class="text-gold">Exquisite</span> Appliques</h1>
+                <p class="hero-subtitle">Hand-curated digital embroidery formats for professionals and hobbyists.</p>
+                <div class="hero-btns">
+                    <a href="#shop" class="btn btn-primary">Browse Shop</a>
+                    <a href="#highlights" class="btn btn-secondary">View Collections</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Badges -->
+        <section class="trust-bar container">
+            <div class="trust-item">
+                <i class="fas fa-download"></i>
+                <div class="text">
+                    <h3>Instant Download</h3>
+                    <p>Access files immediately</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <i class="fas fa-shield-alt"></i>
+                <div class="text">
+                    <h3>Secure Payment</h3>
+                    <p>Protected transactions</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <i class="fas fa-star"></i>
+                <div class="text">
+                    <h3>Premium Quality</h3>
+                    <p>Tested stitch patterns</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shop Grid -->
+        <section id="shop" class="shop-section container">
+            <div class="section-header">
+                <h2>Latest Releases</h2>
+                <div class="filter-tabs">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="floral">Floral Borders</button>
+                    <button class="filter-btn" data-filter="applique">Velvet Applique</button>
+                    <button class="filter-btn" data-filter="kids">Kids & Cute</button>
+                </div>
+            </div>
+            <div class="product-grid" id="productGrid">
+                <!-- Products injected by JS -->
+            </div>
+            <div class="center-btn">
+                <a href="#" class="btn btn-outline">View All Designs</a>
+            </div>
+        </section>
+
+        <!-- Collections/Highlights -->
+        <section id="highlights" class="highlights-section">
+            <div class="container">
+                <div class="highlight-card">
+                    <div class="content">
+                        <h3>Bridal Series</h3>
+                        <p>Elegant motifs for special days.</p>
+                        <a href="#" class="link-arrow">Explore <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <div class="content">
+                        <h3>Home Decor</h3>
+                        <p>Transform pillows and linens.</p>
+                        <a href="#" class="link-arrow">Explore <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About/Story -->
+        <section id="about" class="about-section container">
+            <div class="about-header text-center">
+                <h2>Artistry in Every Stitch</h2>
+                <p class="section-subtitle">The story behind Emplaza Creation</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>Our Mission</h3>
+                    <p>At Emplaza Creation, we believe digital embroidery should be as authentic as hand-stitched art.
+                        Founded in 2020, our goal has always been to bridge the gap between traditional craftsmanship
+                        and modern technology.</p>
+                    <p>We painstakingly digitize each pattern, running multiple test stitches to ensure valid thread
+                        tension, minimal jump stitches, and optimal density for various fabric types.</p>
+
+                    <h3 style="margin-top: 1.5rem;">Meet the Designer</h3>
+                    <p>Lead Digitizer, <strong>Sarah Jenkins</strong>, brings over 15 years of textile experience. Her
+                        passion for botany inspires our signature floral collections, ensuring every petal and leaf
+                        flows naturally.</p>
+
+                    <ul class="check-list" style="margin-top: 1.5rem;">
+                        <li><i class="fas fa-check"></i> Multi-format support (PES, DST, JEF, EXP)</li>
+                        <li><i class="fas fa-check"></i> Detailed color charts included</li>
+                        <li><i class="fas fa-check"></i> Resize-friendly density</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <!-- Placeholder for About Image -->
+                    <img src="https://placehold.co/600x500/e6f2f2/008080?text=Studio+Process" alt="Designing Embroidery"
+                        style="width:100%; height:100%; object-fit:cover; border-radius: var(--radius-lg);">
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="faq-section container">
+            <h2 class="text-center">Frequently Asked Questions</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">What file formats are included? <i
+                            class="fas fa-plus"></i></button>
+                    <div class="accordion-body">
+                        <p>Each download includes a ZIP file with all major formats: PES, DST, EXP, HUS, JEF, VIP, VP3,
+                            and XXX.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">Can I use these for commercial products? <i
+                            class="fas fa-plus"></i></button>
+                    <div class="accordion-body">
+                        <p>Yes! You can use our designs on physical items you sell (up to 500 units). You cannot resell
+                            the digital files themselves.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">How do I download my files? <i class="fas fa-plus"></i></button>
+                    <div class="accordion-body">
+                        <p>After checkout, you'll receive an email with a direct download link. You can also access them
+                            from your account dashboard anytime.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <!-- Contact Form -->
+        <section id="contact" class="contact-section container">
+            <div class="section-header">
+                <h2>Get in Touch</h2>
+                <p>Have a question about a design or need custom digitization?</p>
+            </div>
+            <div class="contact-wrapper">
+                <!-- Contact Info Sidebar -->
+                <div class="contact-info-block">
+                    <h3>Contact Information</h3>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p><strong>Address:</strong><br>Noida Sec 63, Uttar Pradesh, India</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p><strong>Email:</strong><br>vakilthakur007@gmail.com</p>
+                    </div>
+                </div>
+
+                <form class="contact-form-main">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Your Email">
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="subject">Subject</label>
+                        <select id="subject">
+                            <option value="general">General Inquiry</option>
+                            <option value="support">Order Support</option>
+                            <option value="custom">Custom Request</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" placeholder="How can we help?"></textarea>
+                    </div>
+                    <div class="form-submit full-width">
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Newsletter (kept as footer pre-roll) -->
+        <section id="newsletter" class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-box">
+                    <h2>Join the Inner Circle</h2>
+                    <p>Get exclusive freebies, design tips, and 15% off your first order.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email address">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Payment Modal -->
+        <div id="paymentModal" class="modal-overlay">
+            <div class="modal-content">
+                <button class="modal-close"><i class="fas fa-times"></i></button>
+                <div class="modal-header">
+                    <h3>Payment Details</h3>
+                </div>
+                <div class="modal-body text-center">
+                    <p class="payment-msg">If you like our work, please give feedback!</p>
+                    <div class="upi-box">
+                        <p class="label">UPI ID:</p>
+                        <p class="code">78386414570kaxix@ybl</p>
+                        <button class="btn-copy"
+                            onclick="navigator.clipboard.writeText('78386414570kaxix@ybl'); alert('UPI ID Copied!')"><i
+                                class="far fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo footer-logo">Emplaza<span class="gold-accent">.</span></a>
+                <p>Bringing premium digital embroidery to creators worldwide.</p>
+                <div class="footer-contact-mini" style="margin-top: 1.5rem; color: #aaa; font-size: 0.9rem;">
+                    <p><i class="fas fa-map-marker-alt"></i> Noida Sec 63, UP, India</p>
+                    <p><i class="fas fa-envelope"></i> vakilthakur007@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="#shop">Latest Releases</a></li>
+                    <li><a href="#highlights">Collections</a></li>
+                    <li><a href="#shop">Best Sellers</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#" onclick="openPaymentModal(event)">Payment Method</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-etsy"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2025 Emplaza Creation. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
 </body>
+
 </html>

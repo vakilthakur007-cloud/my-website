@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | Emplaza Creation</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .product-detail-section {
+            padding: 4rem 0;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .gallery-main {
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .gallery-thumbs {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .thumb {
+            width: 80px;
+            height: 80px;
+            background: #eee;
+            border-radius: 4px;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+
+        .thumb.active {
+            opacity: 1;
+            border: 2px solid var(--primary);
+        }
+
+        .product-info h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-large {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .formats-list {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .format-tag {
+            background: #eee;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        .add-to-cart-area {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .tabs {
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tab {
+            padding-bottom: 0.5rem;
+            cursor: pointer;
+            color: #666;
+            border-bottom: 2px solid transparent;
+        }
+
+        .tab.active {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="top-strip">
+            <div class="container">
+                <p>✨ Premium Designs for Creative Souls | Instant Downloads</p>
+                <div class="header-socials">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav container">
+            <a href="index.html" class="logo">Emplaza<span class="gold-accent">.</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#shop">Shop Designs</a></li>
+                <li><a href="index.html#highlights">Collections</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="product-detail-section container">
+        <div class="product-container">
+            <!-- Gallery -->
+            <div class="product-gallery">
+                <div class="gallery-main product-main-image">
+                    <img src="https://placehold.co/800x800/f0f4f4/008080?text=Product+View" alt="Main View">
+                </div>
+                <div class="gallery-thumbs">
+                    <div class="thumb active"><img src="https://placehold.co/100x100/eee/999?text=1"></div>
+                    <div class="thumb"><img src="https://placehold.co/100x100/eee/999?text=2"></div>
+                    <div class="thumb"><img src="https://placehold.co/100x100/eee/999?text=3"></div>
+                </div>
+            </div>
+
+            <!-- Info -->
+            <div class="product-info">
+                <span class="text-gold" id="p-category">CATEGORY</span>
+                <h1 id="p-title">Product Title</h1>
+                <span class="price-large" id="p-price">$0.00</span>
+
+                <p id="p-desc">Product description goes here.</p>
+
+                <div style="margin: 1.5rem 0;">
+                    <strong>Formats Included:</strong>
+                    <div class="formats-list" style="margin-top:0.5rem;" id="p-formats">
+                        <!-- Formats injected here -->
+                    </div>
+                </div>
+
+                <div class="add-to-cart-area">
+                    <button class="btn btn-primary" style="flex:1" id="add-cart-btn">Add to Cart</button>
+                    <button class="btn btn-secondary"><i class="far fa-heart"></i></button>
+                </div>
+
+                <div class="product-tabs">
+                    <div class="tabs">
+                        <div class="tab active">Description</div>
+                        <div class="tab">Stitch Details</div>
+                    </div>
+                    <div class="tab-content">
+                        <p><strong>Size:</strong> 4x4, 5x7, 6x10 inches<br>
+                            <strong>Stitch Count:</strong> ~12,000 (avg)<br>
+                            <strong>Colors:</strong> Varies
+                        </p>
+                        <p style="margin-top:1rem;">This design is digitized for optimal performance on all major
+                            machine brands.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment Modal -->
+        <div id="paymentModal" class="modal-overlay">
+            <div class="modal-content">
+                <button class="modal-close"><i class="fas fa-times"></i></button>
+                <div class="modal-header">
+                    <h3>Payment Details</h3>
+                </div>
+                <div class="modal-body text-center">
+                    <p class="payment-msg">If you like our work, please give feedback!</p>
+                    <div class="upi-box">
+                        <p class="label">UPI ID:</p>
+                        <p class="code">78386414570kaxix@ybl</p>
+                        <button class="btn-copy"
+                            onclick="navigator.clipboard.writeText('78386414570kaxix@ybl'); alert('UPI ID Copied!')"><i
+                                class="far fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Product Logic -->
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const id = parseInt(params.get('id'));
+
+            if (!id || !window.products) {
+                // If no ID or data, default or redirect?
+                // For now, let's just load the first one or show error
+                return;
+            }
+
+            const product = window.products.find(p => p.id === id);
+
+            if (product) {
+                document.title = product.title + " | Emplaza Creation";
+
+                // Update Image
+                const mainImg = document.querySelector('.gallery-main img');
+                if (mainImg) mainImg.src = product.image;
+
+                // Update Gallery Thumbnails
+                const thumbsContainer = document.querySelector('.gallery-thumbs');
+                if (thumbsContainer && product.images && product.images.length > 0) {
+                    thumbsContainer.innerHTML = product.images.map((img, index) =>
+                        `<div class="thumb ${index === 0 ? 'active' : ''}" onclick="changeImage('${img}', this)">
+                            <img src="${img}" alt="Thumbnail ${index + 1}">
+                        </div>`
+                    ).join('');
+                } else if (thumbsContainer) {
+                    // Fallback if no images array, just show main
+                    thumbsContainer.innerHTML = `<div class="thumb active"><img src="${product.image}"></div>`;
+                }
+
+                // Update Text
+                document.getElementById('p-category').textContent = product.category.toUpperCase();
+                document.getElementById('p-title').textContent = product.title;
+                document.getElementById('p-price').textContent = '$' + product.price.toFixed(2);
+                document.getElementById('p-desc').textContent = `Premium digital embroidery file for ${product.title}. Perfect for your next creative project.`;
+                document.getElementById('add-cart-btn').textContent = `Add to Cart - $${product.price.toFixed(2)}`;
+
+                // Update Formats
+                const formatsContainer = document.getElementById('p-formats');
+                if (formatsContainer && product.formats) {
+                    formatsContainer.innerHTML = product.formats.map(f => `<span class="format-tag">${f}</span>`).join('');
+                }
+            } else {
+                document.querySelector('.product-container').innerHTML = '<h2>Product not found</h2><a href="index.html" class="btn btn-primary">Back to Shop</a>';
+            }
+        });
+
+        function changeImage(src, thumb) {
+            // Update Main
+            document.querySelector('.gallery-main img').src = src;
+
+            // Update Active Thumb
+            document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+            thumb.classList.add('active');
+        }
+    </script>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo footer-logo">Emplaza<span class="gold-accent">.</span></a>
+                <p>Bringing premium digital embroidery to creators worldwide.</p>
+                <div class="footer-contact-mini" style="margin-top: 1.5rem; color: #aaa; font-size: 0.9rem;">
+                    <p><i class="fas fa-map-marker-alt"></i> Noida Sec 63, UP, India</p>
+                    <p><i class="fas fa-envelope"></i> vakilthakur007@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="index.html#shop">Latest Releases</a></li>
+                    <li><a href="index.html#highlights">Collections</a></li>
+                    <li><a href="index.html#shop">Best Sellers</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="#" onclick="openPaymentModal(event)">Payment Method</a></li>
+                    <li><a href="index.html#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-etsy"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2025 Emplaza Creation. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
